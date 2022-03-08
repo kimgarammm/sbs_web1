@@ -29,10 +29,10 @@ a{
     transform: translate(-50%,-50%);
     background-color: white;
     width: 350px;
-    height: 650px;
+    height: 600px;
     padding: 30px;
     border-radius: 10px;
-    /*x축위치y춗위치블러색상*/
+    /*x축위치y축위치블러색상*/
     box-shadow: 5px 5px 10px rgba(0, 0, 0,0.4);
 }
 
@@ -46,3 +46,112 @@ a{
 
 }
 #login .login-logo img{width: 100%; height: 200px;  object-fit: contain; }
+
+/*아이디비밀번호*/
+#login .login-inputbox{
+    position: relative;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#login .login-inputbox input{
+    width: 100%;
+    height: 32px;
+    padding-left: 5px;
+    font-size: 1rem;
+    border-bottom: 1px solid #aaa;
+    box-sizing: border-box;
+
+}
+#login .login-inputbox input::placeholder
+{color: #aaa;}
+
+#login .login-inputbox input ~ .border{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 0px solid cornflowerblue;
+    background-color: cornflowerblue;
+}
+
+/*:focus
+    -input 태그에 마우스커서가놓인상태를선택*/
+    #login .login-inputbox input:focus~ .border{
+        width:100%;
+        border-width:1px;
+        transition:width 0.5s;
+        transition-timing-function:ease-in-out;
+    
+    }
+
+
+    /*아이디저장 자동로그인*/
+    #login .login-remember{height: 30px; margin-bottom: 30px; text-align: center;}
+
+    #login .login-remember label{
+        position: relative;
+        padding-left: 25px;
+        color: #aaa;
+        cursor: pointer;
+        margin-right: 15px;
+    }
+    #login .login-remember input[type='checkbox']{
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+    #login .login-remember label .checkmark{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: #eee;
+    }
+/*체크모양*/
+#login .login-remember label .checkmark::after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0; /*top right bottom left*/
+    transform:rotate(45deg);
+}
+/*checked
+-체크박스가체크된 상태를지정하는선택자*/
+#login .login-remember label input[type='checkbox']:checked~.checkmark{
+    background-color: cornflowerblue;
+}
+#login .login-remember label input[type='checkbox']:checked~.span{
+    background-color: cornflowerblue;
+}
+/*버튼*/
+#login .login-btnbox{
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#login .login-btnbox .login-btn{
+    display: block;
+    background-color: cornflowerblue;
+    color: white;font-size: 1.2rem;
+    color: white;
+    line-height: 50px;
+    border-radius: 5px;
+}
+
+#login .login-btnbox .login-btn:hover{
+    filter: brightness(90%);
+}
+/**카피라이트*/
+#login .copy{height: 15px; margin-top: 30px; margin-bottom: 10px;}
+#login .copy p{font-size: 0.7rem; text-align: center;}
+
+
